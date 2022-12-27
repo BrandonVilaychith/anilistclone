@@ -1,19 +1,45 @@
 import React from "react";
 import styled from "styled-components";
 
-function HeroBlock() {
-    return (
-        <HeroBlock>
-            <BlockImage src={stats} alt="information" />
-            <BlockTextContainer>
-                <BlockHeading>Discover your obsession</BlockHeading>
-                <BlockText>
-                    What are your highest rated genres or most watched voice actors?
-                    Follow your watching habits over time with in-depth statistics.
-                </BlockText>
-            </BlockTextContainer>
-        </HeroBlock>
-    );
+const BlockHeading = styled.h3`
+  margin-bottom: 8px;
+  color: #ecf6fe;
+  font-size: 18px;
+  font-weight: 700;
+  /* line-height: 146%; */
+`;
+
+const Block = styled.div`
+  /* border: 1px solid blue; */
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const BlockText = styled.p`
+  font-size: 14px;
+  color: #acd5f2;
+  line-height: 146%;
+`;
+
+const BlockImage = styled.img`
+  width: 80px;
+  margin-right: 30px;
+`;
+
+function HeroBlock(props) {
+  const { heading, content, img, index } = props;
+  return (
+    <Block key={index}>
+      <BlockImage src={img} alt='information' />
+      <div>
+        <BlockHeading>{heading}</BlockHeading>
+        <BlockText>{content}</BlockText>
+      </div>
+    </Block>
+  );
 }
 
 export default HeroBlock;
