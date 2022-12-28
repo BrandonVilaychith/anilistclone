@@ -2,6 +2,8 @@ import "./global.css";
 
 import Nav from "./Components/Navigation/Nav";
 import Hero from "./Components/Hero/Hero";
+import Filter from "./Components/Filters/Filter";
+
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -11,14 +13,15 @@ const Container = styled.div`
 `;
 
 function App() {
-  return (
-    <div className='App'>
-      <Nav />
-      <Container>
-        <Hero />
-      </Container>
-    </div>
-  );
+    return (
+        <div className='App'>
+            <Nav/>
+            <Container>
+                <Hero/>
+                <Filter/>
+            </Container>
+        </div>
+    );
 }
 
 export default App;

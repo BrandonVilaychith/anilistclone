@@ -14,7 +14,7 @@ function Nav() {
     return (
         <NavContainer>
             <NavItemContainer>
-                <Logo src={logo} />
+                <Logo src={logo}/>
                 <div>
                     <NavItem>Anime</NavItem>
                     <NavItem>Manga</NavItem>

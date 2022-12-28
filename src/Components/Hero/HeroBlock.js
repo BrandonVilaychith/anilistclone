@@ -30,16 +30,16 @@ const BlockImage = styled.img`
 `;
 
 function HeroBlock(props) {
-  const { heading, content, img, index } = props;
-  return (
-    <Block key={index}>
-      <BlockImage src={img} alt='information' />
-      <div>
-        <BlockHeading>{heading}</BlockHeading>
-        <BlockText>{content}</BlockText>
-      </div>
-    </Block>
-  );
+    const {heading, content, img, index} = props;
+    return (
+        <Block key={index}>
+            <BlockImage src={img} alt='information'/>
+            <div>
+                <BlockHeading>{heading}</BlockHeading>
+                <BlockText>{content}</BlockText>
+            </div>
+        </Block>
+    );
 }
 
 export default HeroBlock;

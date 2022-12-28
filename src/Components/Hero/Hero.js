@@ -1,7 +1,7 @@
 // noinspection JSValidateTypes
 
 import React from "react";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import styled from "styled-components";
 import HeroBlock from "./HeroBlock";
@@ -56,7 +56,7 @@ const JoinButton = styled(Link)`
   align-items: center;
   font-size: 18px;
   padding-left: 55px;
-  margin-top:70px;
+  margin-top: 70px;
 `;
 
 const ButtonCircle = styled.div`
@@ -71,30 +71,30 @@ const ButtonCircle = styled.div`
 `
 
 function Hero() {
-  return (
-    <HeroContainer>
-      <HeroTitle>The next-generation anime platform</HeroTitle>
-      <HeroSubTitle>
-        Track, share, discover your favorite anime and manga with AniList.
-      </HeroSubTitle>
-      <HeroBlockContainer>
-        {heroData.map((item, index) => (
-          <HeroBlock
-            img={item.img}
-            heading={item.heading}
-            content={item.content}
-            index={index}
-          />
-        ))}
-      </HeroBlockContainer>
-      <JoinButton>
-          Join Now
-          <ButtonCircle>
-            <ChevronRightIcon style={{color: "#3577FF"}}/>
-          </ButtonCircle>
-      </JoinButton>
-    </HeroContainer>
-  );
+    return (
+        <HeroContainer>
+            <HeroTitle>The next-generation anime platform</HeroTitle>
+            <HeroSubTitle>
+                Track, share, discover your favorite anime and manga with AniList.
+            </HeroSubTitle>
+            <HeroBlockContainer>
+                {heroData.map((item, index) => (
+                    <HeroBlock
+                        img={item.img}
+                        heading={item.heading}
+                        content={item.content}
+                        index={index}
+                    />
+                ))}
+            </HeroBlockContainer>
+            <JoinButton>
+                Join Now
+                <ButtonCircle>
+                    <ChevronRightIcon style={{color: "#3577FF"}}/>
+                </ButtonCircle>
+            </JoinButton>
+        </HeroContainer>
+    );
 }
 
 export default Hero;

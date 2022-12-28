@@ -17,6 +17,7 @@ const NavItem = styled(Link)`
   letter-spacing: 0.08em;
   color: #a6a79e;
   display: inline-block;
+
   &:visited {
     color: white;
   }
