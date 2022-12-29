@@ -18,7 +18,7 @@ const HeroContainer = styled.div`
 const HeroTitle = styled.h1`
   font-weight: 700;
   margin-bottom: 20px;
-  font-size: 32px;
+  font-size: 3.2rem;
   text-align: center;
 `;
 
@@ -28,7 +28,7 @@ const HeroSubTitle = styled.h2`
   max-width: 370px;
   margin: 0 auto;
   line-height: 142%;
-  font-size: 21px;
+  font-size: 2.1rem;
   font-weight: 500;
 `;
 
@@ -54,7 +54,7 @@ const JoinButton = styled(Link)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 18px;
+  font-size: 1.8rem;
   padding-left: 55px;
   margin-top:70px;
 `;
