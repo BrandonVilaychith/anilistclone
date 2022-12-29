@@ -13,7 +13,7 @@ const NavItem = styled(Link)`
   text-decoration: none;
   padding: 18px 16px;
   text-align: center;
-  font-size: 14px;
+  font-size: 1.4rem;
   letter-spacing: 0.08em;
   color: #a6a79e;
   display: inline-block;

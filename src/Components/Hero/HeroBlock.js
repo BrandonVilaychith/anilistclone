@@ -4,7 +4,7 @@ import styled from "styled-components";
 const BlockHeading = styled.h3`
   margin-bottom: 8px;
   color: #ecf6fe;
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 700;
   /* line-height: 146%; */
 `;
@@ -19,7 +19,7 @@ const Block = styled.div`
 `;
 
 const BlockText = styled.p`
-  font-size: 14px;
+  font-size: 1.4rem;
   color: #acd5f2;
   line-height: 146%;
 `;
