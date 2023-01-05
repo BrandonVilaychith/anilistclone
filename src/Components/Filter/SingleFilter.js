@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SearchIcon from '@mui/icons-material/Search';
 
-import { useQuery } from "@apollo/client";
+import {useQuery} from "@apollo/client";
 
 
 const FilterInput = styled.input`
@@ -18,7 +18,7 @@ const FilterInputContainer = styled.div`
   padding: 11px 10px;
   padding-left: 13px;
   border-radius: 6px;
-  
+
 `;
 
 const FilterPlaceHolder = styled.div`
@@ -39,19 +39,29 @@ const FilterContainer = styled.div`
 `;
 
 function SingleFilter({title, query}) {
-    const { loading, error, data } = useQuery(query);
+    const {loading, error, data} = useQuery(query);
 
     if (loading) return <h1>Loading</h1>
     console.log(data.GenreCollection)
     return (
-        <FilterContainer>
-            <FilterTitle>{title}</FilterTitle>
-            <FilterInputContainer>
-                <FilterPlaceHolder>Any</FilterPlaceHolder>
-                <FilterInput/>
-                <ExpandMoreIcon fontSize={"medium"}/>
-            </FilterInputContainer>
-        </FilterContainer>
+        <div>
+            <FilterContainer>
+                <FilterTitle>{title}</FilterTitle>
+                <FilterInputContainer>
+                    <FilterPlaceHolder>{title !== "Search" ? "Any" :
+                        <SearchIcon fontSize={"medium"}/>}</FilterPlaceHolder>
+                    <FilterInput/>
+                    <ExpandMoreIcon fontSize={"medium"}/>
+                </FilterInputContainer>
+            </FilterContainer>
+            <div>
+                {data.GenreCollection.map((item, index) => {
+                    return (
+                        <p>{item}</p>
+                    )
+                })}
+            </div>
+        </div>
     )
 }
 
