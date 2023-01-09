@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from 'styled-components';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SearchIcon from '@mui/icons-material/Search';
@@ -35,33 +36,46 @@ const FilterTitle = styled.p`
 `;
 
 const FilterContainer = styled.div`
+  position: relative;
+  width: 180px;
+`;
 
+const DropDown = styled.div`
+  visibility: ${props => (props.active ? "visible" : "hidden")};
+  opacity: ${props => (props.active ? 1 : 0)};
+  transition: visibility 0.2s linear, opacity 0.2s linear;
+  background-color: red;
+  position: absolute;
+  width: 100%;
 `;
 
 function SingleFilter({title, query}) {
+    const [active, setActive] = useState(false)
     const {loading, error, data} = useQuery(query);
 
     if (loading) return <h1>Loading</h1>
-    console.log(data.GenreCollection)
+
+    const onClickHandler = () => setActive(!active);
+
     return (
-        <div>
-            <FilterContainer>
+        <FilterContainer>
+            <div>
                 <FilterTitle>{title}</FilterTitle>
                 <FilterInputContainer>
                     <FilterPlaceHolder>{title !== "Search" ? "Any" :
                         <SearchIcon fontSize={"medium"}/>}</FilterPlaceHolder>
                     <FilterInput/>
-                    <ExpandMoreIcon fontSize={"medium"}/>
+                    <ExpandMoreIcon fontSize={"medium"} onClick={onClickHandler} cursor={"pointer"}/>
                 </FilterInputContainer>
-            </FilterContainer>
-            <div>
+            </div>
+            <DropDown active={active}>
                 {data.GenreCollection.map((item, index) => {
                     return (
-                        <p>{item}</p>
+                        <p key={index}>{item}</p>
                     )
                 })}
-            </div>
-        </div>
+            </DropDown>
+        </FilterContainer>
     )
 }
 
