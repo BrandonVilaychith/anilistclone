@@ -83,7 +83,7 @@ function Hero() {
             img={item.img}
             heading={item.heading}
             content={item.content}
-            index={index}
+            key={index}
           />
         ))}
       </HeroBlockContainer>

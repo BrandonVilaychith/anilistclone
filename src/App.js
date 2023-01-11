@@ -3,7 +3,7 @@ import "./global.css";
 // Components
 import Nav from "./Components/Navigation/Nav";
 import Hero from "./Components/Hero/Hero";
-import Filter from "./Components/Filter/Filter";
+import Filter from "./Components/Filter/Filter/Filter";
 // Packages
 import styled from "styled-components";
 
