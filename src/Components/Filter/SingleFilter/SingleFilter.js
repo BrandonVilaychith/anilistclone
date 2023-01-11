@@ -7,7 +7,8 @@ import {
     FilterInputContainer,
     FilterPlaceHolder,
     FilterInput,
-    DropDown
+    DropDown,
+    DropDownListItem
 } from './styles';
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -24,16 +25,18 @@ function SingleFilter({title, query, setDropDown, dropDown}) {
             <div>
                 <FilterTitle>{title}</FilterTitle>
                 <FilterInputContainer>
-                    <FilterPlaceHolder>{title !== "Search" ? "Any" :
-                        <SearchIcon fontSize={"medium"}/>}</FilterPlaceHolder>
+                    <FilterPlaceHolder>
+                        {title !== "Search" ? "Any" : <SearchIcon fontSize={"medium"}/>}
+                    </FilterPlaceHolder>
                     <FilterInput/>
                     <ExpandMoreIcon fontSize={"medium"} onClick={() => onClickHandler(setDropDown, dropDown, title)} cursor={"pointer"}/>
                 </FilterInputContainer>
             </div>
             <DropDown dropDown={dropDown} title={title}>
+                <h4>{title}</h4>
                 {data.GenreCollection.map((item, index) => {
                     return (
-                        <p key={index}>{item}</p>
+                        <DropDownListItem key={index}>{item}</DropDownListItem>
                     )
                 })}
             </DropDown>

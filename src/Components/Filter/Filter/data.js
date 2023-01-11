@@ -15,7 +15,7 @@ const titles = [
         query: QUERY
     },
     {
-        title: "Genre",
+        title: "Genres",
         query: QUERY
     },
     {
